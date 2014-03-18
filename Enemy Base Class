@@ -1,3 +1,61 @@
 //Nathan Kowaleski
-//Enemy Base Class
+//Enemy Base Class .cpp
+
+Enemy::Enemy()
+{
+	x=0;
+	y=0;
+	maxhealth=1;
+	currenthealth=1;
+	xv=0;
+	yv=0;
+
+
+}
+
+void Enemy::damage(int x)
+{
+currenthealth=currenthealth-x;
+}
+
+void Enemy::move()
+{
+	x+=xv;
+	 if( ( x < 0 ) || ( x + DOT_WIDTH > SCREEN_WIDTH ) )
+		 x-=xv;
+	 y+=yv;
+	 if( ( y < 0 ) || ( y + DOT_HEIGHT > SCREEN_HEIGHT ) )
+		 y-=yv;
+}
+
+void Enemy::show()
+{
+	apply_surface( x, y, Enemy, screen );
+}
+void Enemy::direction()
+{
+	 if( event.type == SDL_KEYDOWN )
+	 {
+
+		 switch( event.key.keysym.sym )
+		 {
+		 case SDLK_UP: yVel--; break;
+		 case SDLK_DOWN: yVel++; break;
+		 case SDLK_LEFT: xVel--; break;
+		 case SDLK_RIGHT: xVel++; break;
+		 }
+	 }
+	 else if( event.type == SDL_KEYUP )
+	 {
+
+		 switch( event.key.keysym.sym )
+		 {
+		 case SDLK_UP: yVel++; break;
+		 case SDLK_DOWN: yVel--; break;
+		 case SDLK_LEFT: xVel++; break;
+		 case SDLK_RIGHT: xVel--; break;
+		 }
+	 }
+}
+
 
