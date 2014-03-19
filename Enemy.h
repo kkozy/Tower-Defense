@@ -1,5 +1,8 @@
 //Nathan Kowaleski
 //Enemy .h file
+
+#include "SDL/SDL.h"
+
 class Enemy
 {
 private:
