@@ -30,7 +30,7 @@ public:
 	void setx(int);
 	void sety(int);
 	void setxv(int);
-	void setxy(int);
+	void setyv(int);
 	void setspeed(int);
 	void setmaxhealth(int);
 	void setcurrenthealth(int);
