@@ -1,6 +1,11 @@
 //Nathan Kowaleski
 //Enemy Base Class .cpp
 
+
+#include "SDL/SDL.h"
+#include "Enemy.h"
+
+
 Enemy::Enemy()
 {
 	x=0;
@@ -34,7 +39,103 @@ void Enemy::show()
 }
 void Enemy::direction(char c)
 {
-	
+switch(c)
+{
+case 'u':
+case 'U':
+yv=-1*speed;
+xv=0;
+break;
+case 'd':
+case 'D':
+yv=1*speed;
+xv=0;
+break;
+case 'l':
+case 'L':
+yv=0;
+xv=-1*speed;
+break;
+case 'r':
+case 'R':
+yv=0;
+xv=1*speed;
+break;
+default:
+yv=0;
+xv=0;
+break;
 }
 
+}
+
+int Enemy::getx()
+{
+return x;
+}
+
+int Enemy::gety()
+{
+return y;
+}
+
+int Enemy::getxv()
+{
+return xv;
+}
+
+int Enemy::getyv()
+{
+return yv;
+}
+
+int Enemy::getspeed()
+{
+return speed;
+}
+
+int Enemy::getmaxhealth()
+{
+return maxhealth;
+}
+
+int Enemy::getcurrenthealth()
+{
+return currenthealth;
+}
+
+void Enemy::setx(int i)
+{
+x=i;
+}
+
+void Enemy::sety(int i)
+{
+y=i;
+}
+
+void Enemy::setxv(int i)
+{
+xv=i;
+}
+
+void Enemy::setyv(int i)
+{
+yv=i;
+}
+
+void Enemy::setspeed(int i)
+{
+speed=i;
+}
+
+void Enemy::setmaxhealth(int i)
+{
+maxhealth=i;
+}
+
+void Enemy::setcurrenthealth(int i)
+{
+currenthealth=i;
+}
 
