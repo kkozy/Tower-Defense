@@ -9,7 +9,7 @@ Enemy::Enemy()
 	currenthealth=1;
 	xv=0;
 	yv=0;
-
+	speed=1;
 
 }
 
@@ -32,30 +32,9 @@ void Enemy::show()
 {
 	apply_surface( x, y, Enemy, screen );
 }
-void Enemy::direction()
+void Enemy::direction(char c)
 {
-	 if( event.type == SDL_KEYDOWN )
-	 {
-
-		 switch( event.key.keysym.sym )
-		 {
-		 case SDLK_UP: yVel--; break;
-		 case SDLK_DOWN: yVel++; break;
-		 case SDLK_LEFT: xVel--; break;
-		 case SDLK_RIGHT: xVel++; break;
-		 }
-	 }
-	 else if( event.type == SDL_KEYUP )
-	 {
-
-		 switch( event.key.keysym.sym )
-		 {
-		 case SDLK_UP: yVel++; break;
-		 case SDLK_DOWN: yVel--; break;
-		 case SDLK_LEFT: xVel++; break;
-		 case SDLK_RIGHT: xVel--; break;
-		 }
-	 }
+	
 }
 
 
