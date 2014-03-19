@@ -24,7 +24,7 @@ public:
 	int gety();
 	int getxv();
 	int getxy();
-	int getSpeed();
+	int getspeed();
 	int getmaxhealth();
 	int getcurrenthealth();
 	void setx(int);
