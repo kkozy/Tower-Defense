@@ -13,7 +13,7 @@ private:
 
 public:
 	Enemy();
-	void direction();
+	void direction(char);
 	void move();
 	void show();
 	void damage(int);
